@@ -1,0 +1,7 @@
+name: Notion
+version: '1.0.0'
+main: org.notionsmp.plugins.Notion
+api-version: '1.21'
+load: STARTUP
+authors: [ Akis (discord: ]
+description: Notion all in one (Chat manager, Permission Manager, etc..)
