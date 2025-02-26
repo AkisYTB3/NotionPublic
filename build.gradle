@@ -2,8 +2,8 @@ plugins {
     id 'java'
 }
 
-group = 'org.notionsmp'
-version = '1.0.0'
+group = project.group
+version = project.version
 
 repositories {
     mavenCentral()
@@ -18,10 +18,13 @@ repositories {
 }
 
 dependencies {
-    compileOnly("io.papermc.paper:paper-api:1.21-R0.1-SNAPSHOT")
+    compileOnly("io.papermc.paper:paper-api:${paperapi}")
+    compileOnly("net.kyori:adventure-text-minimessage:${minimessage}")
+    compileOnly("org.projectlombok:lombok:${lombok}")
+    annotationProcessor("org.projectlombok:lombok:${lombok}")
 }
 
-def targetJavaVersion = 21
+def targetJavaVersion = Integer.parseInt(project.targetJavaVersion)
 java {
     def javaVersion = JavaVersion.toVersion(targetJavaVersion)
     sourceCompatibility = javaVersion
