@@ -15,6 +15,7 @@ repositories {
         name = "sonatype"
         url = "https://oss.sonatype.org/content/groups/public/"
     }
+    maven { url = "https://repo.aikar.co/content/groups/aikar/" }
 }
 
 dependencies {
@@ -22,6 +23,7 @@ dependencies {
     compileOnly("net.kyori:adventure-text-minimessage:${minimessage}")
     compileOnly("org.projectlombok:lombok:${lombok}")
     annotationProcessor("org.projectlombok:lombok:${lombok}")
+    implementation "co.aikar:acf-paper:${paperacf}"
 }
 
 def targetJavaVersion = Integer.parseInt(project.targetJavaVersion)
