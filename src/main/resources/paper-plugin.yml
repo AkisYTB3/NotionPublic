@@ -1,7 +1,7 @@
 name: Notion
-version: '1.0.0'
+version: ${version}
 main: org.notionsmp.plugins.Notion
 api-version: '1.21'
 load: STARTUP
-authors: [ Akis (discord: ]
+author: "Akis (discord: yeahakis)"
 description: Notion all in one (Chat manager, Permission Manager, etc..)
