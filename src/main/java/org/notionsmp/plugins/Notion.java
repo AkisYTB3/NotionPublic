@@ -1,21 +1,23 @@
 package org.notionsmp.plugins;
 
+import co.aikar.commands.PaperCommandManager;
 import lombok.Getter;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.minimessage.MiniMessage;
 import net.kyori.adventure.text.serializer.plain.PlainTextComponentSerializer;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.notionsmp.plugins.commands.NotionCommand;
 
 @Getter
 public final class Notion extends JavaPlugin {
 
+    @Getter
+    private static Notion instance;
     private static final MiniMessage MINI_MESSAGE = MiniMessage.miniMessage();
     private static final PlainTextComponentSerializer PLAIN_TEXT_SERIALIZER = PlainTextComponentSerializer.plainText();
     private static final String PLUGIN_PREFIX = "<gradient:#663399:#7069ff>Notion</gradient> <gray>| <white>";
 
-    @Getter
-    private static Notion instance;
 
     @Override
     public void onEnable() {
@@ -24,7 +26,13 @@ public final class Notion extends JavaPlugin {
         log("Starting plugin...");
         registerCommands();
         registerListeners();
+        initializeCommandManager();
         log("Plugin enabled!");
+    }
+
+    private void initializeCommandManager() {
+        PaperCommandManager manager = new PaperCommandManager(this);
+        manager.registerCommand(new NotionCommand());
     }
 
     private void registerListeners() {
