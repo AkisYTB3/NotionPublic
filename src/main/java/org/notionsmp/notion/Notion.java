@@ -14,9 +14,10 @@ public final class Notion extends JavaPlugin {
 
     @Getter
     private static Notion instance;
-    private static final MiniMessage MINI_MESSAGE = MiniMessage.miniMessage();
+    public static final MiniMessage MINI_MESSAGE = MiniMessage.miniMessage();
     private static final PlainTextComponentSerializer PLAIN_TEXT_SERIALIZER = PlainTextComponentSerializer.plainText();
-    private static final String PLUGIN_PREFIX = "<gradient:#663399:#7069ff>Notion</gradient> <gray>| <white>";
+    public static final String NAME = "<gradient:#663399:#7069ff>Notion</gradient>";
+    private static final String PREFIX = NAME + " <gray>| <white>";
 
 
     @Override
@@ -52,7 +53,7 @@ public final class Notion extends JavaPlugin {
     }
 
     private void log(String message) {
-        Component component = MINI_MESSAGE.deserialize(PLUGIN_PREFIX + message);
+        Component component = MINI_MESSAGE.deserialize(PREFIX + message);
         String plainText = PLAIN_TEXT_SERIALIZER.serialize(component);
         getLogger().info(plainText);
     }
