@@ -1,4 +1,5 @@
 plugins {
+    id 'com.gradleup.shadow' version '8.3.0'
     id 'java'
 }
 
@@ -23,7 +24,12 @@ dependencies {
     compileOnly("net.kyori:adventure-text-minimessage:${minimessage}")
     compileOnly("org.projectlombok:lombok:${lombok}")
     annotationProcessor("org.projectlombok:lombok:${lombok}")
-    implementation "co.aikar:acf-paper:${paperacf}"
+    implementation("co.aikar:acf-paper:${paperacf}")
+}
+
+shadowJar {
+    relocate 'co.aikar.commands', 'org.notionsmp.notion.acf'
+    relocate 'co.aikar.locales', 'org.notionsmp.notion.locales'
 }
 
 def targetJavaVersion = Integer.parseInt(project.targetJavaVersion)
@@ -52,3 +58,5 @@ processResources {
         expand props
     }
 }
+
+build.dependsOn shadowJar
