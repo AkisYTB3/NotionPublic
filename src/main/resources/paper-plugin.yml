@@ -1,6 +1,6 @@
 name: Notion
 version: ${version}
-main: org.notionsmp.plugins.Notion
+main: org.notionsmp.notion.Notion
 api-version: '1.21'
 load: STARTUP
 author: "Akis (discord: yeahakis)"
