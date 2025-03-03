@@ -16,7 +16,7 @@ public final class Notion extends JavaPlugin {
     private static Notion instance;
     public static final MiniMessage MINI_MESSAGE = MiniMessage.miniMessage();
     private static final PlainTextComponentSerializer PLAIN_TEXT_SERIALIZER = PlainTextComponentSerializer.plainText();
-    public static final String NAME = "<gradient:#663399:#7069ff>Notion</gradient>";
+    public static final String NAME = "<gradient:#663399:#7069ff>ɴᴏᴛɪᴏɴ</gradient>";
     private static final String PREFIX = NAME + " <gray>| <white>";
 
 
