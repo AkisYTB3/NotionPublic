@@ -1,4 +1,4 @@
-package org.notionsmp.plugins;
+package org.notionsmp.notion;
 
 import co.aikar.commands.PaperCommandManager;
 import lombok.Getter;
@@ -7,7 +7,7 @@ import net.kyori.adventure.text.minimessage.MiniMessage;
 import net.kyori.adventure.text.serializer.plain.PlainTextComponentSerializer;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
-import org.notionsmp.plugins.commands.NotionCommand;
+import org.notionsmp.notion.commands.NotionCommand;
 
 @Getter
 public final class Notion extends JavaPlugin {
