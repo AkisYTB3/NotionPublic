@@ -59,4 +59,4 @@ processResources {
     }
 }
 
-build.dependsOn shadowJar
+jar.dependsOn shadowJar
