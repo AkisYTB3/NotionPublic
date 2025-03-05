@@ -30,6 +30,19 @@ dependencies {
 shadowJar {
     relocate 'co.aikar.commands', 'org.notionsmp.notion.acf'
     relocate 'co.aikar.locales', 'org.notionsmp.notion.locales'
+
+    minimize {
+        exclude(dependency('org.projectlombok:lombok:.*'))
+        exclude(dependency('net.kyori:adventure-text-minimessage:.*'))
+    }
+
+    exclude 'META-INF/*.SF'
+    exclude 'META-INF/*.DSA'
+    exclude 'META-INF/*.RSA'
+    exclude 'META-INF/LICENSE'
+    exclude 'META-INF/NOTICE'
+    exclude 'META-INF/maven/**'
+    exclude 'META-INF/MANIFEST.MF'
 }
 
 def targetJavaVersion = Integer.parseInt(project.targetJavaVersion)
