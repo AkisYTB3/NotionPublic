@@ -1,0 +1,6 @@
+groups:
+  default:
+    prefix: "<gray>"
+    weight: 0
+    permissions:
+      - "notion.default"
